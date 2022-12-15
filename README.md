@@ -65,3 +65,4 @@ Most inputs inherit their defaults from
 | `changelog` | Contents of generated change log. |
 
 [inherit]: https://github.com/github-changelog-generator/github-changelog-generator/wiki/Advanced-change-log-generation-examples#additional-options "Inherited from github-changelog-generator."
+
