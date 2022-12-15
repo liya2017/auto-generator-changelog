@@ -1,0 +1,77 @@
+name: "Generate changelog"
+description: "Automatically generate change log from your tags, issues, labels and pull requests on GitHub."
+branding:
+  icon: edit
+  color: orange
+inputs:
+  repo:
+    description: "Target GitHub repo in the form of organization/repository."
+    required: false
+  user:
+    description: "Username of the owner of target GitHub repo."
+    required: false
+  project:
+    description: "Name of project on GitHub."
+    required: false
+  token:
+    description: "To make more than 50 requests per hour your GitHub token is required."
+    required: false
+  # dateFormat:
+  #   description: "Date format."
+  #   required: false
+  output:
+    description: "Output file."
+    required: false
+  base:
+    description: "Optional base file to append generated changes to."
+    required: false
+  headerLabel:
+    description: "Set up custom header label."
+    required: false
+  configureSections:
+    description: "Define your own set of sections which overrides all default sections."
+    required: false
+  addSections:
+    description: "Add new sections but keep the default sections."
+    required: false
+  author:
+    description: "Add author of pull request at the end."
+    required: false
+  compareLink:
+    description: "Include compare link (Full Changelog) between older version and newer version."
+    required: false
+  excludeTags:
+    description: "Changelog will exclude specified tags."
+    required: false
+  excludeTagsRegex:
+    description: "Apply a regular expression on tag names so that they can be excluded."
+    required: false
+  sinceTag:
+    description: "Changelog will start after specified tag."
+    required: false
+  dueTag:
+    description: "Changelog will end before specified tag."
+    required: false
+  releaseUrl:
+    description: "The URL to point to for release links, in printf format (with the tag as variable)."
+    required: false
+  verbose:
+    description: "Run verbosely."
+    required: false
+  #  version: # excluded
+  #  help: # excluded
+  onlyLastTag:
+    description: "Changelog will only show last tag."
+    required: false
+  stripHeaders:
+    description: "Strip headers."
+    required: false
+  stripGeneratorNotice:
+    description: "Strip generator reference."
+    required: false
+outputs:
+  changelog:
+    description: "Contents of generated change log."
+runs:
+  using: "docker"
+  image: "Dockerfile"
